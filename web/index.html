@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ index }}</h1>
+
+<h3>GET</h3>
+<div>
+    <form action="/submit" method="get">
+        <input type="text" name="submit">
+        <input type="submit" value="GET">
+    </form>
+</div>
+<br>
+<h3>POST</h3>
+<div>
+    <form action="/submit/" method="post">
+        {% csrf_token %}
+        <input type="text" name="submit">
+        <input type="submit" value="POST">
+    </form>
+</div>
+<br>
+<h3>LOGIN</h3>
+<div>
+    <form action="/login/" method="post">
+        {% csrf_token %}
+        <input type="text" name="num" placeholder="num">
+        <br>
+        <input type="password" name="pwd" placeholder="pwd">
+        <input type="submit" value="LOGIN">
+    </form>
+    <p>{{ mess }}</p>
+</div>
+</body>
+</html>
